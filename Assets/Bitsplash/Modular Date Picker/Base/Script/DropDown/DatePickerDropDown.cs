@@ -1,23 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 namespace Bitsplash.DatePicker
 {
     /// <summary>
-    /// this is a UI.Text implementation of the drop down
+    /// This is a UI.Text or TextMeshProUGUI implementation of the dropdown
     /// </summary>
     public class DatePickerDropDown : DatePickerDropDownBase
     {
-        public Text Label;
+        public Text LabelText;
+        public TextMeshProUGUI LabelTMP;
 
         protected override void SetText(string text)
         {
-            if (Label != null)
-                Label.text = text;
+            if (LabelText != null)
+                LabelText.text = text;
+            else if (LabelTMP != null)
+                LabelTMP.text = text;
         }
     }
 }
